@@ -1,9 +1,9 @@
-import axios from 'axios'
-import AnimatedBg from 'react-animated-bg'
-import { useEffect, useState } from 'react'
-import { AiOutlineTwitter } from 'react-icons/ai'
-import { ImQuotesLeft } from 'react-icons/im'
-import { Colors } from './ColorList'
+// import axios from 'axios'
+// import AnimatedBg from 'react-animated-bg'
+// import { useEffect, useState } from 'react'
+// import { AiOutlineTwitter } from 'react-icons/ai'
+// import { ImQuotesLeft } from 'react-icons/im'
+// import { Colors } from './ColorList'
 
 import './App.css'
 
@@ -11,25 +11,25 @@ const apiUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness'
 const apiKey = 'EuIYu1IzkDhyQbB7Il0ftQ==EUtdRlj78A6xD4ca'
 
 function App() {
-	const [quote, setQuote] = useState({
-		quote: '',
-		author: '',
-	})
-	const [color, setColor] = useState('#ffffff')
+	// const [quote, setQuote] = useState({
+	// 	quote: '',
+	// 	author: '',
+	// })
+	// const [color, setColor] = useState('#ffffff')
 
-	const getNewQuote = async () => {
-		const { data } = await axios.get(apiUrl, {
-			headers: {
-				'X-Api-Key': apiKey,
-				'Access-Control-Allow-Origin': '*',
-			},
-		})
-		setQuote({
-			quote: data[0].quote,
-			author: data[0].author,
-		})
-		setColor(Colors[Math.floor(Math.random() * Colors.length)])
-	}
+	// const getNewQuote = async () => {
+	// 	const { data } = await axios.get(apiUrl, {
+	// 		headers: {
+	// 			'X-Api-Key': apiKey,
+	// 			'Access-Control-Allow-Origin': '*',
+	// 		},
+	// 	})
+	// 	setQuote({
+	// 		quote: data[0].quote,
+	// 		author: data[0].author,
+	// 	})
+	// 	setColor(Colors[Math.floor(Math.random() * Colors.length)])
+	// }
 
 	// useEffect(() => {
 	// 	getNewQuote()
