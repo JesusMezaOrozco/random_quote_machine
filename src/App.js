@@ -21,7 +21,6 @@ function App() {
 		const { data } = await axios.get(apiUrl, {
 			headers: {
 				'X-Api-Key': apiKey,
-				'Access-Control-Allow-Origin': '*',
 			},
 		})
 		setQuote({
