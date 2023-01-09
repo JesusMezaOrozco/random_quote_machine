@@ -36,62 +36,63 @@ function App() {
 	}, [])
 
 	return (
-		<AnimatedBg colors={[color]} duration={1} timingFunction='linear'>
-			<div className='vw-100 vh-100 d-flex align-items-center justify-content-center flex-column'>
-				{quote.quote && (
-					<>
-						<div id='quote-box' className='quoteContainer'>
-							<div id='text'>
-								<p className='text-center'>
-									<ImQuotesLeft
-										className='quoteIcon'
-										style={{
-											color,
-											transition: 'all 1s linear',
-										}}
-									/>
-									{quote.quote}
-								</p>
-							</div>
-							<div id='author' className='d-flex justify-content-end'>
-								<span className='fst-italic' style={{ fontSize: 12 }}>
-									- {quote.author}
-								</span>
-							</div>
-							<div className='d-flex justify-content-between mt-2'>
-								<a
-									className='btn'
-									href='http://www.twitter.com/intent/tweet'
-									id='tweet-quote'
-									style={{
-										backgroundColor: color,
-										color: 'white',
-										transition: 'all 1s linear',
-									}}
-								>
-									<AiOutlineTwitter />
-								</a>
-								<button
-									id='new-quote'
-									className='btn'
-									onClick={getNewQuote}
-									style={{
-										backgroundColor: color,
-										color: 'white',
-										transition: 'all 1s linear',
-									}}
-								>
-									New Quote
-								</button>
-							</div>
-						</div>
-						<div>
-							<p style={{ color: 'white', fontSize: 10 }}>by Jesus Meza</p>
-						</div>
-					</>
-				)}
-			</div>
-		</AnimatedBg>
+		// <AnimatedBg colors={[color]} duration={1} timingFunction='linear'>
+		// 	<div className='vw-100 vh-100 d-flex align-items-center justify-content-center flex-column'>
+		// 		{quote.quote && (
+		// 			<>
+		// 				<div id='quote-box' className='quoteContainer'>
+		// 					<div id='text'>
+		// 						<p className='text-center'>
+		// 							<ImQuotesLeft
+		// 								className='quoteIcon'
+		// 								style={{
+		// 									color,
+		// 									transition: 'all 1s linear',
+		// 								}}
+		// 							/>
+		// 							{quote.quote}
+		// 						</p>
+		// 					</div>
+		// 					<div id='author' className='d-flex justify-content-end'>
+		// 						<span className='fst-italic' style={{ fontSize: 12 }}>
+		// 							- {quote.author}
+		// 						</span>
+		// 					</div>
+		// 					<div className='d-flex justify-content-between mt-2'>
+		// 						<a
+		// 							className='btn'
+		// 							href='http://www.twitter.com/intent/tweet'
+		// 							id='tweet-quote'
+		// 							style={{
+		// 								backgroundColor: color,
+		// 								color: 'white',
+		// 								transition: 'all 1s linear',
+		// 							}}
+		// 						>
+		// 							<AiOutlineTwitter />
+		// 						</a>
+		// 						<button
+		// 							id='new-quote'
+		// 							className='btn'
+		// 							onClick={getNewQuote}
+		// 							style={{
+		// 								backgroundColor: color,
+		// 								color: 'white',
+		// 								transition: 'all 1s linear',
+		// 							}}
+		// 						>
+		// 							New Quote
+		// 						</button>
+		// 					</div>
+		// 				</div>
+		// 				<div>
+		// 					<p style={{ color: 'white', fontSize: 10 }}>by Jesus Meza</p>
+		// 				</div>
+		// 			</>
+		// 		)}
+		// 	</div>
+		// </AnimatedBg>
+		<>Hola</>
 	)
 }
 
