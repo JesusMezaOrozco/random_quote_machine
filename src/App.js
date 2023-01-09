@@ -1,9 +1,10 @@
 import axios from 'axios'
 import AnimatedBg from 'react-animated-bg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { ImQuotesLeft } from 'react-icons/im'
 import { Colors } from './ColorList'
+
 import './App.css'
 
 const apiUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness'
@@ -14,6 +15,7 @@ function App() {
 		quote: '',
 		author: '',
 	})
+	const [color, setColor] = useState('#ffffff')
 
 	const getNewQuote = async () => {
 		const { data } = await axios.get(apiUrl, {
@@ -25,17 +27,28 @@ function App() {
 			quote: data[0].quote,
 			author: data[0].author,
 		})
+		setColor(Colors[Math.floor(Math.random() * Colors.length)])
 	}
 
+	useEffect(() => {
+		getNewQuote()
+	}, [])
+
 	return (
-		<AnimatedBg colors={Colors} duration={0.5} randomMode>
+		<AnimatedBg colors={[color]} duration={1} timingFunction='linear'>
 			<div className='vw-100 vh-100 d-flex align-items-center justify-content-center flex-column'>
-				{quote.quote ? (
+				{quote.quote && (
 					<>
 						<div id='quote-box' className='quoteContainer'>
 							<div id='text'>
 								<p className='text-center'>
-									<ImQuotesLeft className='quoteIcon' />
+									<ImQuotesLeft
+										className='quoteIcon'
+										style={{
+											color,
+											transition: 'all 1s linear',
+										}}
+									/>
 									{quote.quote}
 								</p>
 							</div>
@@ -49,10 +62,24 @@ function App() {
 									className='btn'
 									href='http://www.twitter.com/intent/tweet'
 									id='tweet-quote'
+									style={{
+										backgroundColor: color,
+										color: 'white',
+										transition: 'all 1s linear',
+									}}
 								>
 									<AiOutlineTwitter />
 								</a>
-								<button id='new-quote' className='btn' onClick={getNewQuote}>
+								<button
+									id='new-quote'
+									className='btn'
+									onClick={getNewQuote}
+									style={{
+										backgroundColor: color,
+										color: 'white',
+										transition: 'all 1s linear',
+									}}
+								>
 									New Quote
 								</button>
 							</div>
@@ -61,14 +88,6 @@ function App() {
 							<p style={{ color: 'white', fontSize: 10 }}>by Jesus Meza</p>
 						</div>
 					</>
-				) : (
-					<button
-						id='new-quote'
-						className='btn btn-primary'
-						onClick={getNewQuote}
-					>
-						Get Quote
-					</button>
 				)}
 			</div>
 		</AnimatedBg>
