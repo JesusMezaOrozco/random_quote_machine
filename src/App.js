@@ -31,9 +31,9 @@ function App() {
 		setColor(Colors[Math.floor(Math.random() * Colors.length)])
 	}
 
-	useEffect(() => {
-		getNewQuote()
-	}, [])
+	// useEffect(() => {
+	// 	getNewQuote()
+	// }, [])
 
 	return (
 		// <AnimatedBg colors={[color]} duration={1} timingFunction='linear'>
