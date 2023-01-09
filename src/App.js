@@ -7,8 +7,8 @@
 
 import './App.css'
 
-const apiUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness'
-const apiKey = 'EuIYu1IzkDhyQbB7Il0ftQ==EUtdRlj78A6xD4ca'
+// const apiUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness'
+// const apiKey = 'EuIYu1IzkDhyQbB7Il0ftQ==EUtdRlj78A6xD4ca'
 
 function App() {
 	// const [quote, setQuote] = useState({
